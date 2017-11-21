@@ -1,0 +1,55 @@
+
+.hidden{
+  display: none;
+}
+#toggle{
+  display: block;
+  position: absolute;
+  right:10px;
+  bottom: 15px;
+  width: 125px;
+  height:75px;
+}
+body{
+  margin: 0;
+  background-color:rgba(255,255,255,.8);
+  background-image: url('light-tree.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+header{
+  magrin: 0;
+  background-color: gainsboro;
+}
+header h1{
+  margin: inherit;
+  height: 50px;
+  padding: 10px 0px 5px 5px;
+}
+
+
+#filter{
+  position: relative;
+  float: right;
+  padding:0 5px 0 5px;
+  right: 20px;
+  width: 20vw;
+  background-color: WhiteSmoke;
+  height: 80vh;
+}
+
+
+#filter article{
+  margin-right: 5px;
+  border-radius: 8px;
+display:block;
+margin: 0;
+width: inherit;
+padding: 10px 5px 5px 10px;
+background-color: white;
+background-color:rgba(255,255,255,0.6);
+}
+
+#filter fieldset{
+  margin: 0;
+}

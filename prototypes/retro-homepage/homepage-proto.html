@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <title> retro's list </title>
+  <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+  <header> <h1> Get ready to get Bytesized! </h1></header>
+
+  <input type="button" id="toggle" value="toggle-filter">
+  <aside id="filter">
+    <article class="filter-p">
+      <p>Welcome to the post filter website, here you can find
+        all sorts of posts of even different file formats.<p>
+    </article>
+
+    <article id="how-to">
+      <p>This little legend is the filter section, here you can
+        filter your posts.
+        </p>
+        <h3>You can...</h3>
+        <ul>
+          <li> Sort by tag</li>
+          <li>sort by type</li>
+          <li>sort by title</li>
+          </ul>
+      </article>
+
+    <article id="filter-input">
+      <label for="tag-in">TagSearch</label>
+      <input id="tag-in" type="text" placeholder="tag">
+      <label for="type-in">TypeSearch</label>
+      <input id="type-in" type="text" placeholder="type">
+      <label for="title-in">TitleSearch</label>
+      <input id="title-in" type="text" placeholder="title">
+
+
+    </article>
+
+  </aside>
+<script>
+////variables
+var numBack=2;
+var tog=1;
+var currback=0;
+function nextBack(){
+  currback=(currback+1)%numBack;
+}
+document.getElementById('toggle').addEventListener('click',function(){
+  tog=!tog;
+  console.log("==tog is now: ", tog);
+  if(tog)
+  document.getElementById('filter').classList.add('hidden');
+  else{
+    document.getElementById('filter').classList.remove('hidden');
+
+  }
+});
+</script>
+</body>
+
+</html>
