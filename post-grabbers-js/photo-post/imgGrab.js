@@ -1,16 +1,24 @@
-
-
+/*Author: conner maddalozzo
+*date: 11/24/17
+*description. tis program works with the image post addeer html
+* it scans the inputs and appends them to an object. (myPost)
+*
+*
+*/
 
 
 /*function newTextPost
 
 inputs: it observes the inputs on the DOM and recordes their values.
-text,tags,title.
+image url, or image file,tags,title.
 
 outputs: this is the constructor for a new post.
 
 description. using "get elemetn by id."
 the javascript will create an object with those values.
+
+
+to preview the post.. press enter
 */
 function newImgPost(){
   var currDate=new Date();
@@ -21,7 +29,7 @@ function newImgPost(){
     this.img=document.getElementById('url-input').value;
   }
   else{
-    this.img=document.getElementById('file-input').value;
+    this.img=document.getElementById('file-input').files[0];
   }
   // i think the tags should be recorded as an arrray. this should
   //make looking thru them easier.
@@ -64,6 +72,7 @@ function clickSubmit(){
   console.log("Hey you finally made your text post: here it is:::!", myPost);
 
 
+//// clean up the mess and reset the fields
   document.getElementById('url-input').value="";
 
   document.getElementById('tag-input').value="";
@@ -78,12 +87,38 @@ that we dont grab half completed object or someting.
 */
 function cancel(){
 
-    this.text=document.getElementById('text-input').value="";
-    this.tags=document.getElementById('tag-input').value="";
-    this.title=document.getElementById('title-input').value="";
+  document.getElementById('url-input').value="";
+  document.getElementById('tag-input').value="";
+  document.getElementById('title-input').value="";
 
     myPost=null;
 }
+
+/*
+function preview,
+when the enter key is pressed, this is what toggles the preview
+of the image. that is if ther is a source specified,
+*/
+function preview(evt){
+
+  if(evt.key=="Enter"){
+  console.log("===\n=ENTER HIT\n===");
+
+  if(document.getElementById('url-input').value){
+   document.getElementById('image-preview').setAttribute('src',document.getElementById('url-input').value);
+   }
+  else{
+    console.log("looks liek we are previewing the uploaded image.", document.getElementById('file-input').files[0]);
+    document.getElementById('image-preview').setAttribute('src',document.getElementById('file-input').files[0]);
+  }
+}
+else{
+  return;
+}
+
+}
+
+
 
 
 
@@ -96,3 +131,4 @@ var myPost; // this will be the global instance of the new post object.
 
 document.getElementById('submit').addEventListener('click',clickSubmit);
 document.getElementById('cancel').addEventListener('click',cancel);
+window.addEventListener('keydown',preview);

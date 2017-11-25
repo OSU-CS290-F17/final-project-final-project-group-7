@@ -2,6 +2,9 @@
 
 
 
+
+
+
 /*function newTextPost
 
 inputs: it observes the inputs on the DOM and recordes their values.
@@ -72,14 +75,12 @@ that we dont grab half completed object or someting.
 */
 function cancel(){
 
-    this.text=document.getElementById('text-input').value="";
-    this.tags=document.getElementById('tag-input').value="";
-    this.title=document.getElementById('title-input').value="";
+    document.getElementById('text-input').value="";
+    document.getElementById('tag-input').value="";
+    document.getElementById('title-input').value="";
 
     myPost=null;
 }
-
-
 
 
 
