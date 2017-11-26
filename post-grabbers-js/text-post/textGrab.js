@@ -1,3 +1,10 @@
+/*Author: conner maddalozzo
+*date: 11/24/17
+*description. tis program works with the text post addeer html
+* it scans the inputs and appends them to an object. (myPost)
+*
+*
+*/
 
 
 
@@ -14,6 +21,23 @@ outputs: this is the constructor for a new post.
 
 description. using "get elemetn by id."
 the javascript will create an object with those values.
+
+.h
+newTextPost={
+
+  type: "" image / text / list
+  title: "" a title to be linked with the post
+  text: "" text representign the post
+  tags: [] array of text
+  date: "" day month year parsed by spaces
+
+}
+
+requries
+
+text <input id="text-input" type="text" >
+postTitle <input id="title-input" type="text">
+tags <input id="tag-input" type="text">
 */
 function newTextPost(){
   var currDate=new Date();

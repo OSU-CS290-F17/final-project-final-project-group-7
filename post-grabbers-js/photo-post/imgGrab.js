@@ -7,7 +7,7 @@
 */
 
 
-/*function newTextPost
+/*function newImgPost
 
 inputs: it observes the inputs on the DOM and recordes their values.
 image url, or image file,tags,title.
@@ -19,12 +19,32 @@ the javascript will create an object with those values.
 
 
 to preview the post.. press enter
+
+
+.h
+newImgPost={
+
+  type: "" image / text / list
+  title: "" a title to be linked with the post
+  image: "" || file --- a url link or the file ---
+  tags: [] array of text
+  date: "" day month year parsed by spaces
+
+}
+
+requries
+
+img <input id="url-input" type="text">
+img <input id="file-input" type="file"
+postTitle <input id="title-input" type="text">
+tags <input id="tag-input" type="text">
 */
 function newImgPost(){
   var currDate=new Date();
 
 
   this.type="image";
+
   if(document.getElementById('url-input').value){
     this.img=document.getElementById('url-input').value;
   }
@@ -98,6 +118,11 @@ function cancel(){
 function preview,
 when the enter key is pressed, this is what toggles the preview
 of the image. that is if ther is a source specified,
+
+
+requires:
+
+preview = <any id="image-preview">
 */
 function preview(evt){
 
