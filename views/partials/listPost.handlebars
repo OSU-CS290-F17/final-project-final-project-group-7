@@ -1,6 +1,8 @@
-<div class="post" data-type={{type}} data-date={{date}} date-title={{title}}>
-    <h3 class="postTitle">{{title}}</h3>
-    <ul class="unorderedList">
-        {{listContents}}
+<div class="post list" data-type={{type}} data-tags={{tags}} data-date={{date}} date-title={{title}}>
+    <h2 class="list-title">{{listTitle}}</h2>
+    <ul class="list">
+        {{#each  text}}
+        <li>{{this}}</li>
+        {{/each}}
     </ul>
 </div>
