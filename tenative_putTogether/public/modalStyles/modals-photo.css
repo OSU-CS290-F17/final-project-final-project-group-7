@@ -1,0 +1,122 @@
+html {
+
+}
+
+body {
+  font-family: sans-serif;
+
+}
+
+.title-box {
+  font-size: 20px;
+  margin: auto;
+  padding: 5px;
+  text-align: center;
+  border-bottom: black solid 2px;
+  background-color: Gainsboro;
+}
+
+/*.text-enter {
+  background-color: white;
+  margin: 25px;
+  height: 300px;
+  border: black solid 2px;
+  margin-bottom: 5px;
+}*/
+.text-enter{
+  padding:5px 5px 10px 5px;
+}
+.under-bar {
+  text-align: center;
+
+}
+
+.tag-bar-spacer {
+  display: inline-block;
+  width: 320px;
+}
+
+.tag-bar {
+  font-size: 10px;
+  text-align: center;
+}
+
+.button-spacer {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+ button {
+   margin: 10px;
+   padding: 5px;
+   width: 90px;
+   background-color: Gainsboro;
+   font-family: sans-serif;
+   font-size: 14px;
+   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,0.10);
+ }
+
+ .add-tags-button {
+   font-size: 10px;
+   margin: 5px;
+ }
+
+ .text-in {
+   resize: none;
+   font-size: 20px;
+   padding: 10px;
+   width: 444px;
+   height: 278px;
+ }
+
+ .preview {
+   border: 2x solid black;
+   width: 300px;
+   height: 190px;
+   background-color: white;
+   margin: auto;
+ }
+ .preview img{
+   border: 0 solid black;
+   width:inherit;
+   height: inherit;
+ }
+
+ .preview-label {
+   text-align: center;
+   font-family: sans-serif;
+   font-size: 14px;
+   margin-bottom: 5px;
+ }
+
+ .preview-spacer {
+   width: 1px;
+   height: 20px;
+ }
+
+ .attach-bar {
+   height: 100px;
+   margin: auto;
+   font-size: 12px;
+   text-align: center;
+ }
+ div.attach-bar p{
+   margin-top:0;
+   margin-bottom:0;
+ }
+
+ .browse-button {
+   width: 90px;
+   font-size: 10px;
+   margin: 5px;
+ }
+
+.browse {
+  margin: 0 5px 0 5px;
+
+}
+
+.url {
+  padding-top: 8px;
+  display:block;
+}

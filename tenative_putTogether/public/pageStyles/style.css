@@ -28,12 +28,19 @@ aside {
     height: 400px;
 }
 
-section {
+#posts {
     margin: 10px;
     display: flex;
+    flex-wrap:wrap;
+    width: 70vw;
+    border:1px solid black;
+    box-shadow: 1px 1px 2px #654314;
+
 }
 
 .post {
+  flex-basis:17.5vw; /* this means that 4 posts go in there*/
+    display:inline-block;
     margin: 10px;
     border-width: 1px;
     border-radius: 10px;
@@ -41,25 +48,28 @@ section {
     border-color: #5f2f00;
     background-color: #d5a653;
     padding: 10px;
-    width: 300px;
-    height: auto;
+    height: 19vw;
 }
+.img img{
+  max-width: 170px;
+  height:auto;
+}
+.list h2{
+  font-size:80%;
+}
+.list li{
+  font-size: 75%;
+}
+
 
 .postData {
     margin: 10px;
-    border-width: 1px;
     border-radius: 10px;
-    border-style: solid;
-    border-color: #5f2f00;
+    border-color:1px solid #5f2f00;
     background-color: #d5a653;
     padding: 10px;
     height: auto;
 }
-
-img {
-    width: inherit;
-}
-
 h3 {
     margin: 0;
 }
