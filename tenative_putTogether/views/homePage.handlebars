@@ -1,11 +1,10 @@
 
-    <header>
-        <div class="logoContainer">
-            <img src="logo.jpg" alt="Our Logo" />
-        </div>
-    </header>
+    {{> header}}
+
+
+
     <main>
-        <aside>
+                                                                                                                                                                                                                                                                                                                                                    <aside>
             <div class="addPostContainer">
                 <button id="add-post" class="addPostButton">Add a Post</button>
             </div>
@@ -17,7 +16,9 @@
 
         <section id="posts">
 
-
+          {{#each posts}}
+          {{> allPost this}}
+          {{/each}}
         </section>
 
 
@@ -39,21 +40,7 @@
 
     </footer>
 
-    <!--
-    <script defer type="text/javascript" src="./functionality/imgGrab.js">
-    // document.getElementById('submit').addEventListener('click',clickSubmit);
-    // document.getElementById('cancel').addEventListener('click',cancel);
-    window.addEventListener('keydown',preview);
-
-    </script>
-
-    <script defer type="text/javascript" src="./functionality/textGrab.js"></script>
-    <script defer type="text/javascript" src="./functionality/listGrab.js">
-    // document.getElementById('remove-item').addEventListener('click',removeLastItem);
-    // document.getElementById('add-item').addEventListener('click',addOneMoreItem);
-    </script>
-  -->
-    <script  type="text/javascript" src="./handleModals.js" defer>
+    <script  type="text/javascript" src="/functionality/handleModals.js" defer>
 
     // here in this script i handle the compileing of each different modal,
     // as the just are way too damn big to handle.

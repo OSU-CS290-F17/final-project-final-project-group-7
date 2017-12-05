@@ -8,16 +8,30 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab:100" rel="stylesheet">
     <!-- This is a 3rd-party stylesheet to include Font Awesome icons: http://fontawesome.io/ -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" charset="utf-8" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" charset="utf-8" defer>
+    console.log("we are about to register the helper");
 
-    <link href="/style.css" rel="stylesheet" />
-    <link href="/assembled.css" rel="stylesheet" />
+    Handlebars.registerHelper('postSelect',function(context,options){
+      console.log("welcome to the slect chooser!");
+
+      var data=context;
+
+      console.log(context);
+      });
+
+    </script>
+
+    <link href="/pageStyles/style.css" rel="stylesheet" />
+    <link href="/pageStyles/assembled.css" rel="stylesheet" />
 
     <link href="/modalStyles/modals-list.css" rel="stylesheet" />
     <link href="/modalStyles/modals-photo.css" rel="stylesheet" />
     <link href="/modalStyles/modals.css" rel="stylesheet" />
 
     <script src="/postTemplates/postTemplates.js" defer ></script>
+
+
+
 
 </head>
 
