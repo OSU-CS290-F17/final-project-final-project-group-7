@@ -107,11 +107,12 @@ Button {
 }
 
 #modal-chooser {
-    position: fixed;
-    top: 213px;
-    left: 400px;
+    position: relative;
+    top: -1100px;
+    left: 0px;
     height: 140px;
     z-index: 1001;
+    margin: auto 450px;
 }
 
 /*Styles for modals*/
