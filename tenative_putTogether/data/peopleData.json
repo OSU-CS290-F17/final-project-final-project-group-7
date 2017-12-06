@@ -32,8 +32,8 @@
         {
           "date": "5 11 2017",
           "isText":0,
-           "isList":1,
-          "isImg":0,
+           "isList":0,
+          "isImg":1,
           "photoURL": "http://stevedalepetworld.com/wp-content/uploads/2017/02/cat-in-box.jpg",
           "tags": ["cats", "funny", "box", "sit", "fat", "comfy", "lol", "cute"],
           "type": "image",
