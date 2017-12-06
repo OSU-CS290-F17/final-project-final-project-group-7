@@ -111,6 +111,7 @@ Button {
     top: 213px;
     left: 400px;
     height: 140px;
+    z-index: 1001;
 }
 
 /*Styles for modals*/
@@ -125,6 +126,21 @@ Button {
     border-style: solid;
     border-color: #5f2f00;
     padding: 0px;
+    z-index: 1001;
+}
+
+#modal-background-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index=1000;
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#modal-background-content.hidden {
+    display: none;
 }
 
 #modal-box.hidden {
