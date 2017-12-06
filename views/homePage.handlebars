@@ -12,7 +12,12 @@
     </aside>
 
 
-    <section id="posts"></section>
+    <section id="posts">
+      {{#each posts}}
+      {{> allPost this}}
+      {{/each}}
+
+    </section>
 
 
 </main>
