@@ -27,19 +27,26 @@ aside {
     border-color: #5f2f00;
     background-color: #d5a653;
     padding: 10px;
-    width: 200px;
+    min-width: 200px;
     height: 400px;
 }
 
 section {
+    display: inline-block;
+    vertical-align: top;
     margin: 10px;
     display: flex;
     flex-direction: column;
 }
 
 /*Styles for the posts*/
+#posts {
+    display: inline-block;
+    vertical-align: top;
+}
 .post {
     display: inline-block;
+    vertical-align: top;
     margin: 10px;
     border-width: 1px;
     border-radius: 10px;
