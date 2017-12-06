@@ -1,0 +1,39 @@
+<div class="post-box">
+  <div class="title-box">
+    Create a new photo post
+    <br>
+    <input id="title-input" type="text" placeholder="Write a title:)">
+  </div>
+
+  <div class="text-enter">
+    <div class="preview-spacer"></div>
+    <div class="preview">
+    <img src="/preview.jpg" id="image-preview" /></div>
+
+
+    <div class="preview-label">Press (Enter) to Preview:</div>
+    <div class="attach-bar">
+      <div class="browse">
+        <label>Browse for file:</label>
+        <input type="file" id="file-input" accept=".png, .jpg, .jpeg" class="browse-button" >
+      </div>
+      <p> or </p>
+      <div class="url">
+        <label>Add photo by URL:</label>
+        <input id="url-input" class="enter-url">
+      </div>
+    </div>
+  </div>
+  <div class="tag-bar">
+    <label for="tag-input">Tags:</label>
+    <input class="add-tags-button" type="text" id="tag-input" size="50" placeholder="add tags here ex(cats happy goofy young cute)">
+  </div>
+
+
+  <div class="under-bar">
+    <button id="cancel" onClick="closemodal()" class="cancel-button"> Cancel </button>
+    <div class="button-spacer"> </div>
+    <button id="submit" onClick="imgSubmit()" class="submit-button"> Submit </button>
+  </div>
+
+</div>
