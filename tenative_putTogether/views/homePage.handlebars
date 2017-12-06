@@ -1,47 +1,49 @@
 
     {{> header}}
 
-
-
-    <main>
-                                                                                                                                                                                                                                                                                                                                                    <aside>
-            <div class="addPostContainer">
-                <button id="add-post" class="addPostButton">Add a Post</button>
-            </div>
-            <div class="filterSection">
-                <h2>Filters</h2>
-            </div>
-        </aside>
-
-
-        <section id="posts">
-
-          {{#each posts}}
-          {{> allPost this}}
-          {{/each}}
-        </section>
-
-
-    </main>
-    <aside id="modal-chooser" class="hidden">
-      <button id="choose-image">Image Post</button>
-      <button id="choose-text">Text Post</button>
-      <button id="choose-list">List Post</button>
-      <button id="close-modallist">[x]</button>
-
-    </aside>
-    <aside id="modal-box" class='hidden'>
-      <div class="background-content">
-
-      </div>
+<main>
+    <aside>
+        <div class="addPostContainer">
+            <button id="add-post" class="addPostButton">Add a Post</button>
+        </div>
+        <div class="filterSection">
+            <h2>Filters</h2>
+        </div>
     </aside>
 
-    <footer>
 
-    </footer>
+    <section id="posts"></section>
 
-    <script  type="text/javascript" src="/functionality/handleModals.js" defer>
 
+</main>
+<aside id="modal-chooser" class="hidden">
+    <button id="choose-image">Image Post</button>
+    <button id="choose-text">Text Post</button>
+    <button id="choose-list">List Post</button>
+    <button id="close-modallist">Nevermind</button>
+
+</aside>
+<aside id="modal-box" class='hidden'>
+    <div class="background-content">
+
+    </div>
+</aside>
+
+<footer></footer>
+
+<!--
+  <script defer type="text/javascript" src="./functionality/imgGrab.js">
+  // document.getElementById('submit').addEventListener('click',clickSubmit);
+  // document.getElementById('cancel').addEventListener('click',cancel);
+  window.addEventListener('keydown',preview);
+  </script>
+  <script defer type="text/javascript" src="./functionality/textGrab.js"></script>
+  <script defer type="text/javascript" src="./functionality/listGrab.js">
+  // document.getElementById('remove-item').addEventListener('click',removeLastItem);
+  // document.getElementById('add-item').addEventListener('click',addOneMoreItem);
+  </script>
+-->
+<script type="text/javascript" src="./handleModals.js" defer>
     // here in this script i handle the compileing of each different modal,
     // as the just are way too damn big to handle.
-    </script>
+</script>
