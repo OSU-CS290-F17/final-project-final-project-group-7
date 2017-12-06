@@ -47,7 +47,7 @@ function newImgPost(){
   }
   // i think the tags should be recorded as an arrray. this should
   //make looking thru them easier.
-  this.tags=document.getElementById('tag-input').value.split(" ");
+  this.tags=document.getElementById('tag-input').value.split(",");
   this.title=document.getElementById('title-input').value;
 
   this.date="";
@@ -71,11 +71,12 @@ those parameters.
 
 */
 function imgSubmit(){
+  console.log("checking to submit now.")
   if(!document.getElementById('url-input').value && !document.getElementById('file-input')){
     alert("Please fill in your subbmission for the post... you know... the MAIN THING?");
     return;
   }
-  if(document.getElementById('tag-input').value.split(" ").length<5){
+  if(document.getElementById('tag-input').value.split(",").length<5){
     alert("Please fill in your TAGS also minimum of 5 tags man., think \"How will people find my data???\" ");
     return;
   }
@@ -183,7 +184,7 @@ function newListPost(){
   this.listTitle=document.getElementById('list-title-input').value;
   // i think the tags should be recorded as an arrray. this should
   //make looking thru them easier.
-  this.tags=document.getElementById('tag-input').value.split(" ");
+  this.tags=document.getElementById('tag-input').value.split(",");
   this.title=document.getElementById('title-input').value;
 
   this.date="";
@@ -221,11 +222,13 @@ those parameters.
 
 */
 function listSubmit(){
+  console.log('checking the list now.')
+
   if(checkListFull()){
     alert("Please fill in your text for the post. the MAIN THING?");
     return;
   }
-  if(document.getElementById('tag-input').value.split(" ").length<5){
+  if(document.getElementById('tag-input').value.split(",").length<5){
     alert("Please fill in your TAGS also minimum of 5 tags man.,",
     " think \"How will people find my data???\" ");
     return;
@@ -348,7 +351,7 @@ function newTextPost(){
   this.text=document.getElementById('text-input').value;
   // i think the tags should be recorded as an arrray. this should
   //make looking thru them easier.
-  this.tags=document.getElementById('tag-input').value.split(" ");
+  this.tags=document.getElementById('tag-input').value.split(",");
   this.title=document.getElementById('title-input').value;
 
   this.date="";
@@ -374,7 +377,7 @@ function textSubmit(){
     alert("Please fill in your text for the post. the MAIN THING?");
     return;
   }
-  if(document.getElementById('tag-input').value.split(" ").length<5){
+  if(document.getElementById('tag-input').value.split(",").length<5){
     alert("Please fill in your TAGS also minimum of 5 tags man., think \"How will people find my data???\" ");
     return;
   }
@@ -435,7 +438,7 @@ console.log("why cant iclick my buttons");
 
 /*here it take care of the suff.*/
 function closemodal(){
-  
+
       document.getElementById('modal-chooser').classList.add('hidden');
       document.getElementById('modal-box').classList.add('hidden');
 
