@@ -419,6 +419,7 @@ console.log("thank your for choosing images.");
 
 var modal=Handlebars.templates.imgModal();
 document.getElementById('modal-box').classList.remove('hidden');
+document.getElementById('modal-chooser').classList.add('hidden');
 console.log(modal);
 document.getElementById('modal-box').insertAdjacentHTML('beforeend',modal);
 ///now ive made the modal, and successfully put it into the dom.
@@ -431,6 +432,7 @@ function newListModal(){
 
 var modal=Handlebars.templates.listModal();
 document.getElementById('modal-box').classList.remove('hidden');
+  document.getElementById('modal-chooser').classList.add('hidden');
 document.getElementById('modal-box').insertAdjacentHTML('beforeend',modal);
 }
 
@@ -439,6 +441,7 @@ function newTextModal(){
 
 var modal=Handlebars.templates.textModal();
 document.getElementById('modal-box').classList.remove('hidden');
+document.getElementById('modal-chooser').classList.add('hidden');
 document.getElementById('modal-box').insertAdjacentHTML('beforeend',modal);
 }
 
