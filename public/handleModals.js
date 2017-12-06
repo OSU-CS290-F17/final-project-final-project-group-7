@@ -1,10 +1,3 @@
-/* author: conner maddalozzo
-date: 12/1/17
-
-desc:
-this document will use handlebars in order to append the right modal.
-because each modal is complex.
-*/
 
 /*
 function newImgPost
@@ -438,9 +431,10 @@ console.log("why cant iclick my buttons");
 
 /*here it take care of the suff.*/
 function closemodal(){
-
+  
       document.getElementById('modal-chooser').classList.add('hidden');
       document.getElementById('modal-box').classList.add('hidden');
+      document.getElementById('modal-background-content').classList.add('hidden');
 
       //remember to remove the html of the post box.
       document.getElementsByClassName('post-box')[0].remove();
@@ -450,7 +444,7 @@ function closemodal(){
 function choosemodal(){
   console.log('show modal choice')
   document.getElementById('modal-chooser').classList.remove('hidden');
-
+  document.getElementById('modal-background-content').classList.remove('hidden');
 
   }
 
