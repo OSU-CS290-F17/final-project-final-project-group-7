@@ -64,10 +64,30 @@ var post=req.body;
 if(post){
   database.insert(post);
 }
-
-
 res.status(200).send("completed succ ");
 //
+
+});
+
+app.use('/posts/:postId',function(req,res,next){
+  var postID=Number(req.params.postId);
+  var counter=0;
+console.log("looking for the ", postID ,"th post");
+
+for(var post of allPosts) {
+    if(postID==counter){
+      console.log("we found match!!!\n===", post);
+      break;
+    }
+
+
+    counter+=1;
+  }
+
+  console.log("we wil be sending this post: ", allPosts[counter]);
+    res.status(200).render('postPage', allPosts[counter]);
+
+
 
 });
 
