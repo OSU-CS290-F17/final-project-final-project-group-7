@@ -452,25 +452,35 @@ function choosemodal(){
 /*this functin sends an http request*/
 function storeData(newPost){
   var body=JSON.stringify(newPost);
+
+  var testReq=new XMLHttpRequest();
+  testReq.onreadystatechange=function(){
+    if(this.readyState == 4 && this.status == 200){
+      console.log("====\n ==" , this.responseText);
+    }
+  };
+
+  testReq.open("GET", "/hello.asp", true);
+  testReq.send();
+
   var postRequest = new XMLHttpRequest();
-  postRequest.open('POST', "/newPost");
-
-
+  postRequest.open('POST', "/newPost",true);
   postRequest.setRequestHeader('Content-Type', 'application/json');
-
+  // postRequest.onreadystatechange=function(){
+  //   if(this.readyState == 4 && this.status == 200){
+  //     console.log("===finaly done\n==",this.responseText,"\n===",this);
+  //     }
+  // };
 
   postRequest.addEventListener('load', function (event) {
      if (event.target.status !== 200) {
        alert("Error storing photo in database:\n\n\n" + event.target.response);
+       console.log("===\nmore detail:", event.target.response);
      }
      else {
-      alert("POST BACKUP SUCCESSFUL")
+      alert("POST BACKUP SUCCESSFUL");
      }
    });
-
-
-
-
 
 console.log("===\n=SENDING: ",postRequest, "\n===" );
   postRequest.send(body);
