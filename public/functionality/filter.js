@@ -5,9 +5,9 @@
 function postPassesFilters(post, filters) {
 
     if (filters.title) {
-      var postDescription = post.title.toLowerCase();
-      var filterText = filters.text.toLowerCase();
-      if (postDescription.includes(filterText)) {
+      var postDescription = post.getAttribute('data-title').value.toLowerCase();
+      var filterText = filters.title.toLowerCase();
+      if (!postDescription.includes(filterText)) {
         return false;
       }
     }
