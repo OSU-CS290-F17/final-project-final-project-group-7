@@ -28,7 +28,9 @@ tags <input id="tag-input" type="text">
 */
 function newImgPost(){
   var currDate=new Date();
-
+  this.isText=0;
+  this.isList=0;
+  this.isImg=1;
 
   this.type="image";
 
@@ -171,7 +173,9 @@ tags <input id="tag-input" type="text">
 function newListPost(){
   var currDate=new Date();
 
-
+  this.isText=0;
+  this.isList=1;
+  this.isImg=0;
   this.type="list";
   this.text=grabEntries();// the text will be an array of strings, because each list entry is a string.
   this.listTitle=document.getElementById('list-title-input').value;
@@ -230,9 +234,9 @@ function listSubmit(){
     return;
   }
   //now we made sure they have all the right values.
-var myPost=new newListPost();
+  var myPost=new newListPost();
   console.log("Hey you finally made your text post: here it is:::!", myPost);
-storeData(myPost);
+  storeData(myPost);
   var posthtml=Handlebars.templates.listPost(myPost);
 
   document.getElementById('posts').insertAdjacentHTML('beforeend',posthtml);
@@ -337,7 +341,9 @@ tags <input id="tag-input" type="text">
 */
 function newTextPost(){
   var currDate=new Date();
-
+  this.isText=1;
+  this.isList=0;
+  this.isImg=0;
 
   this.type="text";
   this.text=document.getElementById('text-input').value;
@@ -452,25 +458,13 @@ function choosemodal(){
 /*this functin sends an http request*/
 function storeData(newPost){
   var body=JSON.stringify(newPost);
-
-  var testReq=new XMLHttpRequest();
-  testReq.onreadystatechange=function(){
-    if(this.readyState == 4 && this.status == 200){
-      console.log("====\n ==" , this.responseText);
-    }
-  };
-
-  testReq.open("GET", "/hello.asp", true);
-  testReq.send();
+console.log("heres your copy of the post.: \n",newPost);
+  window.location.href="/newPost";
 
   var postRequest = new XMLHttpRequest();
   postRequest.open('POST', "/newPost",true);
   postRequest.setRequestHeader('Content-Type', 'application/json');
-  // postRequest.onreadystatechange=function(){
-  //   if(this.readyState == 4 && this.status == 200){
-  //     console.log("===finaly done\n==",this.responseText,"\n===",this);
-  //     }
-  // };
+
 
   postRequest.addEventListener('load', function (event) {
      if (event.target.status !== 200) {
@@ -479,6 +473,7 @@ function storeData(newPost){
      }
      else {
       alert("POST BACKUP SUCCESSFUL");
+
      }
    });
 

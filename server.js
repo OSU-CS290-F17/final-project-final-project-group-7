@@ -6,7 +6,11 @@ var app = express();
 var bodyParser = require('body-parser');
 var clientDB=require('mongodb').MongoClient;
 
-var data=require('./data/peopleData.json');
+//var data=require('./data/peopleData.json');
+var data;
+//fille this variable to instruct that there is additional content from jsonFile
+var jsonFile=null;
+////
 
 
 
@@ -27,7 +31,7 @@ var mongoURL = 'mongodb://' + mongoUser + ':' + mongoPassword +
 
 console.log(mongoURL);
 var mongoConnection = null;
-
+var database=null; // the db object
 var allPosts= null;
 
 
@@ -40,7 +44,8 @@ app.use(bodyParser.json());
 
 
 app.get('/', function (req, res) {
-  res.status(200).render('homePage',data);
+
+  res.status(200).render('homePage',{posts: allPosts});
 });
 
 app.use('/test',function(req, res){
@@ -54,24 +59,23 @@ app.get('/test',function(req,res){
 });
 
 app.use('/newPost',function (req,res,next){
-console.log(req.body);
+console.log("=====\n",req.body,"\n=======");
+var post=req.body;
+if(post){
+  database.insert(post);
+}
 
 
-res.status(200).send("your request has been monitored");
+res.status(200).send("completed succ ");
 //
-// next();
+
 });
-//
+
 // app.get('/newPost',function (req,res,next){
-// console.log("You have sent a request to add a new post to the server.");
+//
+//
 //
 // });
-
-
-app.get('/newPost',function (req,res,next){
-console.log("You have sent a request to add a new post to the server.");
-
-});
 app.use(express.static('public'));
 
 
@@ -80,7 +84,6 @@ app.get('*', function (req, res) {
 });
 
 function uploadJSON(file){
-  allPosts=mongoConnection.collection('posts');
 
 console.log("what we ar about to upload: ", file.posts);
 
@@ -88,9 +91,10 @@ console.log("what we ar about to upload: ", file.posts);
    //  console.log("need to push this in: \n===",data.posts);
  for(var i=0;i<data.posts.length;i++){
      console.log('pushing: ', data.posts[i],"into the database");
-   //    allPosts.insert(data[i]);
+       allPosts.insert(data.posts[i]);
     }
 }
+
 
 
 clientDB.connect(mongoURL, function (err, connection) {
@@ -99,9 +103,28 @@ clientDB.connect(mongoURL, function (err, connection) {
   }
   //collect=db.collection('posts');
   mongoConnection = connection;
+  database=mongoConnection.collection('posts')
+  database.find({}).toArray(function (err,results){
+    if(err){
+      throw err;
+    }
+    else{
+      allPosts=results;
+    }
+  });
 
-uploadJSON(data);
-  app.listen(port, function () {
+if(jsonFile){
+  console.log("We Will now upload the file: ", jsonFile);
+ uploadJSON(jsonFile);
+}
+else{
+  console.log("No json file to upload, resume build.");
+}
+
+
+
+
+ app.listen(port, function () {
     console.log("== Server listening on port:", port);
   });
 
