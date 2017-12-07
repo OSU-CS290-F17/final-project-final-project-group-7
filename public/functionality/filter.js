@@ -23,7 +23,7 @@ function postPassesFilters(post, filters) {
       for(var i=0;i<filters.tags.length;i++){
         console.log("==========\n===ecking:",filters.tags[i]);
         for(var j=0;j<elemTags.length;j++){
-          if(elemTags[j]).includes(filters.tags[i]){
+          if(elemTags[j].includes(filters.tags[i])){
             //console.log("==========\n===MATCH @ \n=",filters.tags[i], " matched with", elemTags[j],"\n ====nice!");
             return true;
           }
