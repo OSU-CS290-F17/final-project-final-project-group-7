@@ -98,4 +98,4 @@ function doFilterUpdate() {
       filterUpdateButton.addEventListener('click', doFilterUpdate)
 
     });
-    var allPostElems;
+    var allPostElems=[];
