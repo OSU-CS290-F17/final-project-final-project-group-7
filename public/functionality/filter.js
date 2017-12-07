@@ -52,7 +52,6 @@ function postPassesFilters(post, filters) {
  * removed from the DOM.
  */
 function doFilterUpdate() {
-  var allPostElems;
        // Get values of filters from user inputs.
       var filters = {
         title: document.getElementById('filter-title').value.trim(),
@@ -99,3 +98,4 @@ function doFilterUpdate() {
       filterUpdateButton.addEventListener('click', doFilterUpdate)
 
     });
+    var allPostElems;
