@@ -1,0 +1,11 @@
+/*this just holds all the stuff with the post.*/
+#profile{
+  width:60vw;
+  height:500px;
+
+}
+
+#data{
+  display:block;
+  float:right
+}

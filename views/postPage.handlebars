@@ -1,17 +1,18 @@
 {{> header}}
-<!-- <link href="postpage.css" rel="stylesheet" /> -->
+ <link href="/pageStyles/postpage.css" rel="stylesheet" />
 
 <article id="profile">
 
+  <aside id="data">
+    <h3> {{title}}</h3>
+    <p> {{date}} </p>
+  </aside>
+
 {{> allPost this}}
 
+
+
+</article>
 <div id="related">
 
 </div>
-
-<aside id="data">
-  <h3> {{title}}</h3>
-  <p> {{date}} </p>
-</aside>
-
-</article>
