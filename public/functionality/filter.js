@@ -5,6 +5,7 @@
 function postPassesFilters(post, filters) {
 
     if (filters.title) {
+      console.log("what are we comparing",post);
       var postDescription = post.getAttribute('data-title').value.toLowerCase();
       var filterText = filters.title.toLowerCase();
       if (!postDescription.includes(filterText)) {
