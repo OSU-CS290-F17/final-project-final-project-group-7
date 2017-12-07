@@ -459,7 +459,6 @@ function choosemodal(){
 function storeData(newPost){
   var body=JSON.stringify(newPost);
 console.log("heres your copy of the post.: \n",newPost);
-  window.location.href="/newPost";
 
   var postRequest = new XMLHttpRequest();
   postRequest.open('POST', "/newPost",true);
