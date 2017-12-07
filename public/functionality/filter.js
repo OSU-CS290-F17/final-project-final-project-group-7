@@ -16,13 +16,13 @@ function postPassesFilters(post, filters) {
     }
 
     if(filters.tags)
-    {
+    {console.log("checkking ", post);
       var elemTags=post.getAttribute('data-tags').split(',');
       console.log("looks like you added some tags");
       for(var i=0;i<filters.tags.length;i++){
         for(var j=0;j<elemTags.length;j++){
-          if(filters.tags[i].contains(elemTags[j])){
-            console.log("==========\n===MATCH @ \n=",filters.tags[i], " matched with", elemTags[j],"\n ====nice!");
+          if(filters.tags[i].includes(elemTags[j])){
+            //console.log("==========\n===MATCH @ \n=",filters.tags[i], " matched with", elemTags[j],"\n ====nice!");
             return true;
           }
         }
@@ -59,6 +59,10 @@ function doFilterUpdate() {
         tags: document.getElementById('filter-tags').value.trim(),
         type: document.getElementById('filter-type').value.trim()
       }
+
+      filters.tags=filters.tags.split(",");
+
+      console.log("the tags in the filters", filters.tags);
 
       var filterConditionCheckedInputs = document.querySelectorAll("#filter-condition input:checked");
       for (var i = 0; i < filterConditionCheckedInputs.length; i++) {
