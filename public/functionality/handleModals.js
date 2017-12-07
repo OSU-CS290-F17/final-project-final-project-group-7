@@ -88,6 +88,8 @@ function imgSubmit(){
   }
   //now we made sure they have all the right values.
   var myPost=new newImgPost();
+
+  storeData(myPost);
   console.log("here we finally made it past the check", myPost);
 
 
@@ -244,6 +246,9 @@ function listSubmit(){
 var myPost=new newListPost();
   console.log("Hey you finally made your text post: here it is:::!", myPost);
 
+  storeData(myPost);
+
+
   var posthtml=Handlebars.templates.listPost(myPost);
 
   document.getElementById('posts').insertAdjacentHTML('beforeend',posthtml);
@@ -397,6 +402,10 @@ function textSubmit(){
   var myPost=new newTextPost();
   var posthtml=Handlebars.templates.textPost(myPost);
 
+
+  storeData(myPost);
+
+
   document.getElementById('posts').insertAdjacentHTML('beforeend',posthtml);
 
   closemodal();
@@ -465,6 +474,13 @@ function choosemodal(){
 
   }
 
+/*this functin sends an http request
+*/
+function storeData(newPost){
+  var text=JSON.stringify(newPost);
+
+  console.log('adding: ', text, "to database");
+}
 //this function adds the posts to the page
 
 

@@ -16,12 +16,14 @@ function postPassesFilters(post, filters) {
     }
 
     if(filters.tags)
-    {console.log("checkking ", post);
+    {
+      console.log("checkking ", post);
       var elemTags=post.getAttribute('data-tags').split(',');
       console.log("looks like you added some tags");
       for(var i=0;i<filters.tags.length;i++){
+        console.log("==========\n===ecking:",filters.tags[i]);
         for(var j=0;j<elemTags.length;j++){
-          if(filters.tags[i].includes(elemTags[j])){
+          if(elemTags[j]).includes(filters.tags[i]){
             //console.log("==========\n===MATCH @ \n=",filters.tags[i], " matched with", elemTags[j],"\n ====nice!");
             return true;
           }
