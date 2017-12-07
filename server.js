@@ -16,9 +16,11 @@ app.get('/', function (req, res) {
 });
 
 
-app.get('/newPost',function (req,res){
+app.get('/newPost',function (req,res,next){
 console.log("You have sent a request to add a new post to the server.");
 console.log("wtf did you send? \n ", req);
+
+res.status(200).write("you suck");
 });
 
 

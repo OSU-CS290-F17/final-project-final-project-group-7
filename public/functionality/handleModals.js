@@ -1,10 +1,3 @@
-/* author: conner maddalozzo
-date: 12/1/17
-
-desc:
-this document will use handlebars in order to append the right modal.
-because each modal is complex.
-*/
 
 /*
 function newImgPost
@@ -37,9 +30,6 @@ function newImgPost(){
   var currDate=new Date();
 
 
-    this.isText=0;
-    this.isList=0;
-    this.isImg=1;
   this.type="image";
 
   if(document.getElementById('url-input').value){
@@ -50,7 +40,7 @@ function newImgPost(){
   }
   // i think the tags should be recorded as an arrray. this should
   //make looking thru them easier.
-  this.tags=document.getElementById('tag-input').value.split(" ");
+  this.tags=document.getElementById('tag-input').value.split(",");
   this.title=document.getElementById('title-input').value;
 
   this.date="";
@@ -74,11 +64,12 @@ those parameters.
 
 */
 function imgSubmit(){
+  console.log("checking to submit now.")
   if(!document.getElementById('url-input').value && !document.getElementById('file-input')){
     alert("Please fill in your subbmission for the post... you know... the MAIN THING?");
     return;
   }
-  if(document.getElementById('tag-input').value.split(" ").length<5){
+  if(document.getElementById('tag-input').value.split(",").length<5){
     alert("Please fill in your TAGS also minimum of 5 tags man., think \"How will people find my data???\" ");
     return;
   }
@@ -88,10 +79,8 @@ function imgSubmit(){
   }
   //now we made sure they have all the right values.
   var myPost=new newImgPost();
-
-  storeData(myPost);
   console.log("here we finally made it past the check", myPost);
-
+  storeData(myPost)
 
   var posthtml=Handlebars.templates.imgPost(myPost);
 
@@ -183,15 +172,12 @@ function newListPost(){
   var currDate=new Date();
 
 
-    this.isText=0;
-    this.isList=1;
-    this.isImg=0;
   this.type="list";
   this.text=grabEntries();// the text will be an array of strings, because each list entry is a string.
   this.listTitle=document.getElementById('list-title-input').value;
   // i think the tags should be recorded as an arrray. this should
   //make looking thru them easier.
-  this.tags=document.getElementById('tag-input').value.split(" ");
+  this.tags=document.getElementById('tag-input').value.split(",");
   this.title=document.getElementById('title-input').value;
 
   this.date="";
@@ -229,13 +215,14 @@ those parameters.
 
 */
 function listSubmit(){
+  console.log('checking the list now.');
+
   if(checkListFull()){
     alert("Please fill in your text for the post. the MAIN THING?");
     return;
   }
-  if(document.getElementById('tag-input').value.split(" ").length<5){
-    alert("Please fill in your TAGS also minimum of 5 tags man.,",
-    " think \"How will people find my data???\" ");
+  if(document.getElementById('tag-input').value.split(",").length<5){
+    alert("Please fill in your TAGS also minimum of 5 tags man. think \"How will people find my data???\" ");
     return;
   }
   if(!document.getElementById('title-input').value){
@@ -245,10 +232,7 @@ function listSubmit(){
   //now we made sure they have all the right values.
 var myPost=new newListPost();
   console.log("Hey you finally made your text post: here it is:::!", myPost);
-
-  storeData(myPost);
-
-
+storeData(myPost);
   var posthtml=Handlebars.templates.listPost(myPost);
 
   document.getElementById('posts').insertAdjacentHTML('beforeend',posthtml);
@@ -341,10 +325,7 @@ newTextPost={
   title: "" a title to be linked with the post
   text: "" text representign the post
   tags: [] array of text
-  date: "" day month year parsed by space
-  isText: 1,
-  isImg: 0,
-  islist:0,
+  date: "" day month year parsed by spaces
 
 }
 
@@ -357,14 +338,12 @@ tags <input id="tag-input" type="text">
 function newTextPost(){
   var currDate=new Date();
 
-  this.isText=1;
-  this.isList=0;
-  this.isImg=0;
+
   this.type="text";
   this.text=document.getElementById('text-input').value;
   // i think the tags should be recorded as an arrray. this should
   //make looking thru them easier.
-  this.tags=document.getElementById('tag-input').value.split(" ");
+  this.tags=document.getElementById('tag-input').value.split(",");
   this.title=document.getElementById('title-input').value;
 
   this.date="";
@@ -390,7 +369,7 @@ function textSubmit(){
     alert("Please fill in your text for the post. the MAIN THING?");
     return;
   }
-  if(document.getElementById('tag-input').value.split(" ").length<5){
+  if(document.getElementById('tag-input').value.split(",").length<5){
     alert("Please fill in your TAGS also minimum of 5 tags man., think \"How will people find my data???\" ");
     return;
   }
@@ -401,10 +380,7 @@ function textSubmit(){
   //now we made sure they have all the right values.
   var myPost=new newTextPost();
   var posthtml=Handlebars.templates.textPost(myPost);
-
-
   storeData(myPost);
-
 
   document.getElementById('posts').insertAdjacentHTML('beforeend',posthtml);
 
@@ -428,7 +404,6 @@ console.log("thank your for choosing images.");
 
 var modal=Handlebars.templates.imgModal();
 document.getElementById('modal-box').classList.remove('hidden');
-document.getElementById('modal-chooser').classList.add('hidden');
 console.log(modal);
 document.getElementById('modal-box').insertAdjacentHTML('beforeend',modal);
 ///now ive made the modal, and successfully put it into the dom.
@@ -441,7 +416,6 @@ function newListModal(){
 
 var modal=Handlebars.templates.listModal();
 document.getElementById('modal-box').classList.remove('hidden');
-  document.getElementById('modal-chooser').classList.add('hidden');
 document.getElementById('modal-box').insertAdjacentHTML('beforeend',modal);
 }
 
@@ -450,7 +424,6 @@ function newTextModal(){
 
 var modal=Handlebars.templates.textModal();
 document.getElementById('modal-box').classList.remove('hidden');
-document.getElementById('modal-chooser').classList.add('hidden');
 document.getElementById('modal-box').insertAdjacentHTML('beforeend',modal);
 }
 
@@ -461,6 +434,7 @@ function closemodal(){
 
       document.getElementById('modal-chooser').classList.add('hidden');
       document.getElementById('modal-box').classList.add('hidden');
+      document.getElementById('modal-background-content').classList.add('hidden');
 
       //remember to remove the html of the post box.
       document.getElementsByClassName('post-box')[0].remove();
@@ -470,16 +444,37 @@ function closemodal(){
 function choosemodal(){
   console.log('show modal choice')
   document.getElementById('modal-chooser').classList.remove('hidden');
-
+  document.getElementById('modal-background-content').classList.remove('hidden');
 
   }
 
-/*this functin sends an http request
-*/
-function storeData(newPost){
-  var text=JSON.stringify(newPost);
 
-  console.log('adding: ', text, "to database");
+/*this functin sends an http request*/
+function storeData(newPost){
+  var body=JSON.stringify(newPost);
+  var postRequest = new XMLHttpRequest();
+  postRequest.open('POST', "/newPost");
+
+
+  postRequest.setRequestHeader('Content-Type', 'application/json');
+
+
+  postRequest.addEventListener('load', function (event) {
+     if (event.target.status !== 200) {
+       alert("Error storing photo in database:\n\n\n" + event.target.response);
+     }
+     else {
+      alert("POST BACKUP SUCCESSFUL")
+     }
+   });
+
+
+
+
+
+console.log("===\n=SENDING: ",postRequest, "\n===" );
+  postRequest.send(body);
+  console.log('adding: ', body, "to database");
 }
 //this function adds the posts to the page
 
