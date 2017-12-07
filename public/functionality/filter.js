@@ -4,46 +4,45 @@
  */
 function postPassesFilters(post, filters) {
 
-  if (filters.title) {
-    var postDescription = post.description.toLowerCase();
-    var filterText = filters.text.toLowerCase();
-    if (postDescription.indexOf(filterText) === -1) {
-      return false;
+    if (filters.title) {
+      var postDescription = post.description.toLowerCase();
+      var filterText = filters.text.toLowerCase();
+      if (postDescription.indexOf(filterText) === -1) {
+        return false;
+      }
     }
-  }
-if( filters.date){
+    if( filters.date){
 
-}
+    }
 
-if(filters.tags){
-  var elemTags=post.getAttribute('data-tags').split(',');
-  console.log("looks like you added some tags");
-  for(var i=0;i<filters.tags.length;i++){
-    for(var j=0;j<elemTags.length;j++){
-      if(filters.tags[i].contains(elemTags[j])){
-        console.log("==========\n===MATCH @ \n=",filters.tags[i], " matched with", elemTags[j],"\n ====nice!");
-        return true;
+    if(filters.tags)
+    {
+      var elemTags=post.getAttribute('data-tags').split(',');
+      console.log("looks like you added some tags");
+      for(var i=0;i<filters.tags.length;i++){
+        for(var j=0;j<elemTags.length;j++){
+          if(filters.tags[i].contains(elemTags[j])){
+            console.log("==========\n===MATCH @ \n=",filters.tags[i], " matched with", elemTags[j],"\n ====nice!");
+            return true;
+          }
+        }
+      }
+        return false;//didnt work out.
+    }
+    
+      if(filters.type)
+      {
+        if(post.getAttribute('data-type')!=String(filters.type)){
+          return false;
+        }
       }
 
-    }
+      return true;
+
   }
-  return false;//didnt work out.
-
-}
-if(filters.type){
-  if(post.getAttribute('data-type')!=String(filters.type)){
-    return false;
-  }
-}
-
-return true;
-
-}
 
 
-  return true;
-
-}
+  
 
 
 
