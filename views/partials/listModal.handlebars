@@ -1,0 +1,31 @@
+<div class="post-box">
+  <div class="title-box">
+    Create a new List post
+    <br>
+    <input id="title-input" type="text" placeholder="Write a title 4 tha post:)">
+  </div>
+  <div class="text-enter">
+
+      <div class="list-title">
+          <input id="list-title-input" type="text" placeholder="List Title:)">
+      </div>
+      <div class="list-contents">
+        <ul id="list-input">
+        </ul>
+      </div>
+
+      <button id="add-item" onClick="addOneMoreItem()" class="list-button">More...</button>
+      <button id="remove-item" onClick="removeLastItem()" style="left: 50vw;" class="list-button" >Less...</button>
+  </div>
+    <div class="tag-bar">
+      <label>Tags:</label>
+      <div class="tag-bar-spacer"> </div>
+      <input class="add-tags-button" type="text" id="tag-input" size="50" placeholder="add tags here ex(ideas,good,LIST,quality,reasons)">
+    </div>
+    <div class="under-bar">
+      <button id="cancel" onClick="closemodal()" class="cancel-button submission"> Cancel </button>
+      <div class="button-spacer"> </div>
+      <button id="submit" onClick="listSubmit()" class="submit-button submission"> Submit </button>
+    </div>
+
+  </div>

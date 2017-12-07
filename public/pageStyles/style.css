@@ -1,0 +1,211 @@
+/*Basic styles for the page*/
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #b0802b;
+}
+
+header {
+    background-color: #724921;
+    color: white;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+main {
+    display: flex;
+}
+
+/*Styles for the sidebar*/
+aside {
+    margin: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #5f2f00;
+    background-color: #d5a653;
+    padding: 10px;
+    width: 200px;
+    height: 400px;
+}
+
+section {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Styles for the posts*/
+.post {
+    display: inline-block;
+    margin: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #5f2f00;
+    background-color: #d5a653;
+    padding: 10px;
+    width: 300px;
+    height: auto;
+}
+
+.postData {
+    margin: 10px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #5f2f00;
+    background-color: #d5a653;
+    padding: 10px;
+    height: auto;
+}
+
+img {
+    width: inherit;
+}
+
+h3 {
+    margin: 0;
+}
+
+.postTitle {
+    margin-left: 50px;
+    padding-top: 15px;
+}
+
+/*styles for all buttons in aside and modals*/
+Button {
+    background-color: #5f2f00;
+    border-style: solid;
+    border-color: #724921;
+    border-radius: 10px;
+    border-width: 1px;
+    color: white;
+    width: 90%;
+    height: 25px;
+    margin: 5px;
+    align-items: center;
+}
+
+.addPostButton:hover {
+    background-color: #b0802b;
+    color: black;
+}
+
+/*Styles for choosing post type to add*/
+#modal-chooser.hidden {
+    display: none;
+}
+
+#modal-chooser {
+    position: fixed;
+    top: 213px;
+    left: 400px;
+    height: 140px;
+}
+
+/*Styles for modals*/
+#modal-box {
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 400px;
+    top: 213px;
+    border-width: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #5f2f00;
+    padding: 0px;
+}
+
+#modal-box.hidden {
+    display: none;
+}
+
+.title-box {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #5f2f00;
+    padding: 10px;
+    font-size: 20px;
+    margin: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.text-enter {
+    margin: 25px;
+    height: auto;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #5f2f00;
+    margin-bottom: 5px;
+    padding: 25px;
+}
+
+.tag-bar {
+    font-size: 10px;
+    text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.add-tags-button {
+    font-size: 10px;
+    margin: 5px;
+}
+
+.text-in {
+    resize: none;
+    font-size: 20px;
+    padding: 10px;
+    width: 444px;
+    height: 278px;
+}
+
+.preview {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #5f2f00;
+    width: 300px;
+    height: auto;
+    background-color: white;
+    margin: auto;
+}
+
+img.preview {
+    padding: 0px;
+}
+
+.preview-label {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.preview-spacer {
+    width: 1px;
+    height: 20px;
+}
+
+.attach-bar {
+    height: 100px;
+    margin: 15px;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.browse-button {
+    width: 90px;
+    font-size: 10px;
+    margin: 5px;
+}
+
+.under-bar {
+    text-align: center;
+    padding-bottom: 10px;
+}
