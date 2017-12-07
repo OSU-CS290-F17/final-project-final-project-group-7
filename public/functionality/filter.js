@@ -29,7 +29,7 @@ function postPassesFilters(post, filters) {
       }
         return false;//didnt work out.
     }
-    
+
       if(filters.type)
       {
         if(post.getAttribute('data-type')!=String(filters.type)){
@@ -42,7 +42,7 @@ function postPassesFilters(post, filters) {
   }
 
 
-  
+
 
 
 
@@ -52,7 +52,7 @@ function postPassesFilters(post, filters) {
  * removed from the DOM.
  */
 function doFilterUpdate() {
-
+  var allPostElems;
        // Get values of filters from user inputs.
       var filters = {
         title: document.getElementById('filter-title').value.trim(),
@@ -69,6 +69,8 @@ function doFilterUpdate() {
     // Remove all "post" elements from the DOM.
       var postContainer = document.getElementById('posts');
       while(postContainer.lastChild) {
+        allPostElems.push(postContainer.lastChild);
+
         postContainer.removeChild(postContainer.lastChild);
       }
 
