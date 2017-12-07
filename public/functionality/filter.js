@@ -11,9 +11,6 @@ function postPassesFilters(post, filters) {
         return false;
       }
     }
-    if( filters.date){
-
-    }
 
     if(filters.tags)
     {
