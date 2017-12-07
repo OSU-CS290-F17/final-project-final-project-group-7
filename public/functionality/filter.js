@@ -54,7 +54,6 @@ function doFilterUpdate() {
        // Get values of filters from user inputs.
       var filters = {
         title: document.getElementById('filter-title').value.trim(),
-        date: document.getElementById('filter-date').value || null,
         tags: document.getElementById('filter-tags').value.trim(),
         type: document.getElementById('filter-type').value.trim()
       }
