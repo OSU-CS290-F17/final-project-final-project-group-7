@@ -100,7 +100,7 @@ app.use(express.static('public'));
 
 
 app.get('*', function (req, res) {
-  res.status(404).write('not found');
+  res.status(404).render('404');
 });
 
 function uploadJSON(file){
