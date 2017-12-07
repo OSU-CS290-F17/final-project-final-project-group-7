@@ -94,17 +94,7 @@
             "tags": ["cats","silly","boop","dog","friend","cute","lol","funny"],
             "date": "01 5 2017"         }
 
-  {
-      "type": "list",
-      "isText": 0,
-      "isList": 1,
-      "isImg": 0,
-      "title": "Some fax about cats",
-      "listTitle": "Cat Fax",
-      "text": [ "They have colours", "They have padderns", "They like toys", "They like food", "They like katnip", "They are cute", "They are great" ],
-      "tags": [ "cats", "are", "super", "cute", "always" ],
-      "date": "01 6 2017"
-    }
+  
   
 ]
 }
